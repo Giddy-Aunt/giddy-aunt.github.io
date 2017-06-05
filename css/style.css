@@ -593,18 +593,20 @@ img {
 .intro__btns {
   text-align: center; }
 
-.skills__list {
-  margin: 0;
-  padding: 0;
-  list-style: none; }
-
-.skills__progress-bar {
+.progress-bar {
+  text-align: left;
   background: #eeeeee;
   border-radius: 2px; }
-  .skills__progress-bar:hover .skills__skill-perc {
-    opacity: 1; }
+  .progress-bar--85 .progress-bar__fill {
+    margin-right: 15%; }
+  .progress-bar--50 .progress-bar__fill {
+    margin-right: 50%; }
+  .progress-bar--80 .progress-bar__fill {
+    margin-right: 20%; }
+  .progress-bar--90 .progress-bar__fill {
+    margin-right: 10%; }
 
-.skills__fill {
+.progress-bar__fill {
   background: linear-gradient(-45deg, transparent 50%, #f1651d 50%, #f1651d 60%, transparent 60%), linear-gradient(-45deg, #f1651d 10%, transparent 10%);
   background-color: #fea360;
   background-size: 1em 1em;
@@ -612,22 +614,7 @@ img {
   height: 100%;
   position: relative; }
 
-.skills__item--html .skills__fill {
-  margin-right: 15%; }
-
-.skills__item--js .skills__fill {
-  margin-right: 50%; }
-
-.skills__item--ps .skills__fill {
-  margin-right: 10%; }
-
-.skills__item--adaptive .skills__fill {
-  margin-right: 30%; }
-
-.skills__item {
-  margin: 25px 0; }
-
-.skills__skill-name {
+.progress-bar__name {
   padding: 5px 5px;
   display: inline-block;
   font-weight: 700;
@@ -636,16 +623,23 @@ img {
   color: white;
   background-color: #f1651d; }
 
-.skills__skill-perc {
+.progress-bar__perc {
   position: absolute;
   display: block;
   right: 0;
   top: -43px;
-  padding: 0 3px;
-  opacity: 0;
+  padding: 0 4px;
+  min-width: 44px;
   color: white;
   background-color: #076f87;
   border-radius: 3px; }
+  .progress-bar__perc::after {
+    content: "";
+    position: absolute;
+    bottom: -19px;
+    left: 12px;
+    border: 10px transparent solid;
+    border-top-color: #076f87; }
 
 .portfolio {
   min-height: 100vh; }
@@ -730,8 +724,28 @@ img {
   padding: 0 8px;
   color: #f1651d; }
 
-.resume {
+.resume__about-me {
+  min-width: 320px;
+  max-width: 600px;
+  width: auto;
+  margin: 0 auto;
+  padding: 0 20px;
   text-align: left; }
+
+.resume__skills {
+  min-width: 320px;
+  max-width: 600px;
+  width: auto;
+  margin: 0 auto;
+  padding: 0 20px; }
+
+.resume__skills-list {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+.resume__skills-item {
+  margin: 25px 0; }
 
 .resume__links {
   padding: 60px;
@@ -773,7 +787,7 @@ img {
     .contacts__link:hover svg {
       fill: #f1651d; }
 
-.certificates-list {
+.resume__certificates-list {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -803,7 +817,8 @@ img {
 
 .certificate__name {
   font-size: 0.8em;
-  border-bottom: 1px solid; }
+  border-bottom: 1px solid;
+  transition: 0.5s; }
 
 .certificate__img-wrapper {
   height: 333px;
@@ -878,6 +893,16 @@ img {
   animation-delay: 0s;
   animation-iteration-count: infinite;
   animation-play-state: running; }
+
+@media (min-width: 1200px) {
+
+  .resume__about-me {
+    max-width: 1200px;
+    margin: 0 auto; }
+
+  .resume__skills {
+    max-width: 1200px;
+    margin: 0 auto; } }
 
 @media (hover: hover) {
 
@@ -978,6 +1003,12 @@ img {
   .btn--resume:active::before {
     opacity: 0;
     transform: translate3d(0, 0, 0); }
+
+  .progress-bar:hover .progress-bar__perc {
+    opacity: 1; }
+
+  .progress-bar__perc {
+    opacity: 0; }
 
   .portfolio__item:nth-child(8n+1) .btn--portfolio, .portfolio__item:nth-child(8n+7) .btn--portfolio {
     color: #076f87;

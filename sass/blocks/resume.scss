@@ -1,5 +1,18 @@
-.resume {
-    text-align: left;
+.resume__about-me {
+  @include container;
+  text-align: left;
+}
+
+.resume__skills {
+  @include container;
+}
+
+.resume__skills-list {
+    @include list-reset;
+}
+
+.resume__skills-item {
+    margin: 25px 0;
 }
 
 .resume__links {
@@ -55,7 +68,7 @@
   }
 }
 
-.certificates-list {
+.resume__certificates-list {
   @include list-reset;
   @include striped-bg($light-grey, white);
 
@@ -87,6 +100,7 @@
 .certificate__name {
   font-size: 0.8em;
   border-bottom: 1px solid;
+  transition: 0.5s;
 }
 
 .certificate__img-wrapper {

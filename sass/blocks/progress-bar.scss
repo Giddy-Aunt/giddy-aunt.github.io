@@ -1,0 +1,70 @@
+.progress-bar {
+  text-align: left;
+  background: $light-grey;
+  border-radius: 2px;
+
+  &--85 &__fill {
+    margin-right: 15%;
+  }
+
+  &--50 &__fill {
+    margin-right: 50%;
+  }
+
+  &--80 &__fill {
+    margin-right: 20%;
+  }
+
+  &--90 &__fill {
+    margin-right: 10%;
+  }
+
+  @media (hover: hover) {
+    &:hover &__perc {
+      opacity: 1;
+    }
+  }
+}
+
+.progress-bar__fill {
+  @include striped-bg($contrast, $contrast-lighter);
+  height: 100%;
+  position: relative;
+}
+
+
+.progress-bar__name {
+  padding: 5px 5px;
+  display: inline-block;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 30px;
+  color: white;
+  background-color: $contrast;
+}
+
+.progress-bar__perc {
+  position: absolute;
+  display: block;
+  right: 0;
+  top: -43px;
+  padding: 0 4px;
+  min-width: 44px;
+  color: white;
+  background-color: $text-color;
+  border-radius: 3px;
+
+  @media (hover: hover) {
+    opacity: 0;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -19px;
+    left: 12px;
+
+    @include triangle(down, 10px, $text-color);
+  }
+}
+

@@ -33,52 +33,6 @@
   }
 }
 
-@mixin clearfix {
-  &::after {
-    content: "";
-
-    display: table;
-    clear: both;
-  }
-}
-
-@mixin column($number) {
-  @media #{$tablet-widths} {
-    float: left;
-    width: $tablet-width / $number;
-  }
-
-  @media #{$desktop-widths} {
-    width: $desktop-width / $number;
-  }
-}
-
-@mixin lines-on-sides($margin, $lines-color, $flex-grow: 1, $lines-width: auto, $lines-height: 2px) {
-  display: flex;
-  align-items: center;
-  text-align: center;
-
-  &::before,
-  &::after {
-    content: '';
-
-    flex-grow: $flex-grow;
-
-    width: $lines-width;
-    height: $lines-height;
-
-    background: $lines-color;
-  }
-
-  &::before {
-    margin-right: $margin;
-  }
-
-  &::after {
-    margin-left: $margin;
-  }
-}
-
 @mixin colorchange ($color: white, $bg: transparent, $bg-hover:$contrast-lighter, $color-hover: white, $bg-active: $contrast, $color-active: white) {
 
   color: $color-hover;
@@ -154,4 +108,20 @@
   background-color: $bg-color;
   background-size: 1em 1em;
   border: 1px solid $light-grey;
+}
+
+@mixin triangle($direction, $size, $color) {
+  border: $size transparent solid;
+  @if ($direction == "top" or $direction == "up") {
+      border-bottom-color: $color;
+  }
+  @else if ($direction == "right" or $direction == "after") {
+    border-left-color: $color;
+  }
+  @else if ($direction == "bottom" or $direction == "down") {
+    border-top-color: $color;
+  }
+  @else if ($direction == "left" or $direction == "before") {
+    border-right-color: $color;
+  }
 }
