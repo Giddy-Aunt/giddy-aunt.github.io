@@ -1,0 +1,42 @@
+@keyframes MoveGradient {
+  0%{background-position:0% 0%}
+  50%{background-position:100% 100%}
+  100%{background-position:0% 0%}
+}
+
+.home {
+  display: flex;
+  justify-content: center;
+
+  min-height: 100vh;
+  padding: 30px 40px;
+
+  background: linear-gradient(135deg, $prime, $prime-lighter);
+  background-size: 400% 400%;
+
+  animation: MoveGradient 20s ease infinite;
+}
+
+.intro {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: stretch;
+  color: #fff;
+}
+
+.intro__photo {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid $prime;
+}
+
+.intro__btns {
+  text-align: center;
+}
+
