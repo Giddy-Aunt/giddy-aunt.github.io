@@ -47,7 +47,7 @@
   position: absolute;
   display: block;
   right: 0;
-  top: -43px;
+  top: -40px;
   padding: 0 4px;
   min-width: 44px;
   color: white;
@@ -61,7 +61,7 @@
   &::after {
     content: "";
     position: absolute;
-    bottom: -19px;
+    bottom: -18px;
     left: 12px;
 
     @include triangle(down, 10px, $text-color);

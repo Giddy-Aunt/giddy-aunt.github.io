@@ -71,11 +71,6 @@
 .resume__certificates-list {
   @include list-reset;
   @include striped-bg($light-grey, white);
-
-  /*display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  flex-wrap: wrap;*/
   padding: 20px;
 }
 
@@ -83,7 +78,6 @@
 .certificate {
 
   padding: 10px 20px;
-  width: 260px;
   padding: 10px;
   margin: 0 auto;
   margin-bottom: 20px;
@@ -104,7 +98,6 @@
 }
 
 .certificate__img-wrapper {
-  height: 333px;
   overflow: hidden;
   background-color: $contrast;
 }
@@ -115,6 +108,8 @@
 
 .certificate__img {
   transition: opacity 0.5s;
+  width: 100%;
+  height: auto;
 }
 
   &:hover {
@@ -127,4 +122,48 @@
       opacity: 0.3;
     }
   }
+}
+
+@media #{$tablet-widths} {
+  .resume__certificates-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  .certificate {
+    width: calc(33.3% - 10px);
+
+    &:not(:last-child) {
+      margin-right: 5px;
+    }
+  }
+}
+
+@media #{$desktop-widths} {
+  .resume__inner {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    @include container;
+  }
+
+  .resume__about-me {
+    width: 50%;
+  }
+
+  .resume__education {
+    width: 50%;
+  }
+
+  .resume__certificates-list {
+    background: none;
+    border: none;
+  }
+
+  .resume__skills {
+    width: 100%;
+  }
+
 }

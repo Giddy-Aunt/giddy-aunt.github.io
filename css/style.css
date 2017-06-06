@@ -627,7 +627,7 @@ img {
   position: absolute;
   display: block;
   right: 0;
-  top: -43px;
+  top: -40px;
   padding: 0 4px;
   min-width: 44px;
   color: white;
@@ -636,25 +636,20 @@ img {
   .progress-bar__perc::after {
     content: "";
     position: absolute;
-    bottom: -19px;
+    bottom: -18px;
     left: 12px;
     border: 10px transparent solid;
     border-top-color: #076f87; }
 
-.portfolio {
-  min-height: 100vh; }
-
 .portfolio__works-list {
   margin: 0;
   padding: 0;
-  list-style: none;
-  min-height: calc(100vh - 24px); }
+  list-style: none; }
   .portfolio__works-list a {
     color: inherit; }
 
 .portfolio__item {
   position: relative;
-  padding: 40px;
   color: white; }
   .portfolio__item:nth-child(8n+1), .portfolio__item:nth-child(8n+7) {
     color: #076f87;
@@ -664,15 +659,12 @@ img {
       border-color: #076f87;
       color: white;
       background-color: #f1651d;
-      border-color: #f1651d;
-      /*& .btn__icon {
-        fill: $text-color;
-      }*/ }
+      border-color: #f1651d; }
       .portfolio__item:nth-child(8n+1) .btn--portfolio .btn__icon, .portfolio__item:nth-child(8n+7) .btn--portfolio .btn__icon {
         fill: white; }
   .portfolio__item:nth-child(8n+2), .portfolio__item:nth-child(8n+8) {
     background-color: #55cfd6; }
-    .portfolio__item:nth-child(8n+2) .portfolio__technologies-item, .portfolio__item:nth-child(8n+8) .portfolio__technologies-item {
+    .portfolio__item:nth-child(8n+2) .work__technologies-item, .portfolio__item:nth-child(8n+8) .work__technologies-item {
       color: #0a97b7; }
     .portfolio__item:nth-child(8n+2) .btn--portfolio, .portfolio__item:nth-child(8n+8) .btn--portfolio {
       color: white;
@@ -698,7 +690,7 @@ img {
         fill: white; }
   .portfolio__item:nth-child(8n+6) {
     background-color: #0a97b7; }
-    .portfolio__item:nth-child(8n+6) .portfolio__technologies-item {
+    .portfolio__item:nth-child(8n+6) .work__technologies-item {
       color: #0a97b7; }
     .portfolio__item:nth-child(8n+6) .btn--portfolio {
       color: white;
@@ -712,12 +704,15 @@ img {
   .portfolio__item p {
     margin: 4px 0; }
 
-.portfolio__technologies {
+.work {
+  padding: 40px; }
+
+.work__technologies {
   margin: 0;
   padding: 0;
   list-style: none; }
 
-.portfolio__technologies-item {
+.work__technologies-item {
   display: inline-block;
   margin: 4px 0;
   background-color: white;
@@ -726,7 +721,6 @@ img {
 
 .resume__about-me {
   min-width: 320px;
-  max-width: 600px;
   width: auto;
   margin: 0 auto;
   padding: 0 20px;
@@ -734,7 +728,6 @@ img {
 
 .resume__skills {
   min-width: 320px;
-  max-width: 600px;
   width: auto;
   margin: 0 auto;
   padding: 0 20px; }
@@ -795,15 +788,10 @@ img {
   background-color: white;
   background-size: 1em 1em;
   border: 1px solid #eeeeee;
-  /*display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  flex-wrap: wrap;*/
   padding: 20px; }
 
 .certificate {
   padding: 10px 20px;
-  width: 260px;
   padding: 10px;
   margin: 0 auto;
   margin-bottom: 20px;
@@ -821,7 +809,6 @@ img {
   transition: 0.5s; }
 
 .certificate__img-wrapper {
-  height: 333px;
   overflow: hidden;
   background-color: #f1651d; }
 
@@ -829,7 +816,9 @@ img {
   color: inherit;
   text-decoration: none; }
   .certificate__link .certificate__img {
-    transition: opacity 0.5s; }
+    transition: opacity 0.5s;
+    width: 100%;
+    height: auto; }
   .certificate__link:hover .certificate__name {
     color: #f1651d;
     border-bottom: 3px solid; }
@@ -894,15 +883,155 @@ img {
   animation-iteration-count: infinite;
   animation-play-state: running; }
 
-@media (min-width: 1200px) {
+@media (min-width: 600px) {
+
+  .intro__photo {
+    width: 300px;
+    height: 300px; }
+
+  .intro__btns {
+    display: flex;
+    flex-direction: row; }
+
+  .intro__btns .btn {
+    flex-grow: 1;
+    max-width: 300px; }
+
+  .intro__btns .btn:first-child {
+    margin-right: 20px; }
+
+  .portfolio__works-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; }
+
+  .portfolio__item {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch; }
+
+  .work {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch; }
+
+  .work__links {
+    margin-top: auto; }
+
+  .resume__certificates-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap; }
+
+  .certificate {
+    width: calc(33.3% - 10px); }
+
+  .certificate:not(:last-child) {
+    margin-right: 5px; } }
+
+@media (min-width: 600px) and (hover: hover) {
+
+  .work__links {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: calc(50% - 66px - 15px);
+    opacity: 0;
+    transition: opacity 0.5s; }
+
+  .work__caption,
+  .work__image {
+    transition: opacity 0.5s; }
+
+  /*.btn--portfolio {
+    width: 100px;
+    min-width: 100px;
+    height: 100px;
+    padding: 5px;
+    margin: 0;
+    border-radius: 0;
+    position: absolute !important;
+    border: 4px solid white;
+
+    &:first-child {
+      top: -4px;
+      left: -4px;
+    }
+
+    &:last-child {
+      right: -4px;
+      bottom: -4px;
+    }
+
+    & span,
+    & svg {
+     display: block;
+     transform: rotate(45deg);
+    }
+  }
+*/
+
+  .work:hover .work__links {
+    opacity: 1;
+
+    /*width: 200px;
+        height: 200px;
+        border: 4px solid white;
+        margin: auto;
+        transform: rotate3d(0,0,1,-45deg) scale3d(1,1,1);*/ }
+
+  .work:hover .work__caption,
+  .work:hover .work__image {
+    opacity: 0; } }
+
+@media (min-width: 900px) {
+
+  .portfolio__item {
+    width: 33.33%; }
 
   .resume__about-me {
-    max-width: 1200px;
+    max-width: 1300px;
     margin: 0 auto; }
 
   .resume__skills {
-    max-width: 1200px;
+    max-width: 1300px;
+    margin: 0 auto; }
+
+  .resume__inner {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    min-width: 320px;
+    width: auto;
+    margin: 0 auto;
+    padding: 0 20px; }
+
+  .resume__about-me {
+    width: 50%; }
+
+  .resume__education {
+    width: 50%; }
+
+  .resume__certificates-list {
+    background: none;
+    border: none; }
+
+  .resume__skills {
+    width: 100%; } }
+
+@media (min-width: 900px) and (min-width: 900px) {
+
+  .resume__inner {
+    max-width: 1300px;
     margin: 0 auto; } }
+
+@media (min-width: 1300px) {
+
+  .portfolio__item {
+    width: 25%; } }
 
 @media (hover: hover) {
 

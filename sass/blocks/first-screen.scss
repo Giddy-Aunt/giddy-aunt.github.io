@@ -27,8 +27,7 @@
 }
 
 .intro__photo {
-  width: 200px;
-  height: 200px;
+  @include size(200px);
   margin: 0 auto;
 
   border-radius: 50%;
@@ -38,5 +37,25 @@
 
 .intro__btns {
   text-align: center;
+}
+
+@media #{$tablet-widths} {
+  .intro__photo {
+    @include size(300px);
+  }
+
+  .intro__btns {
+    display: flex;
+    flex-direction: row;
+
+    & .btn {
+      flex-grow: 1;
+      max-width: 300px;
+      &:first-child {
+        margin-right: 20px;
+      }
+    }
+
+  }
 }
 

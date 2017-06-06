@@ -1,10 +1,9 @@
 .portfolio {
-  min-height: 100vh;
+  //min-height: 100vh;
 }
 
 .portfolio__works-list {
   @include list-reset;
-  min-height: calc(100vh - 24px);
 
   & a {
     color: inherit;
@@ -13,7 +12,6 @@
 
 .portfolio__item {
   position: relative;
-  padding: 40px;
   color: white;
 
   &:nth-child(8n+1),
@@ -24,10 +22,6 @@
       color: $text-color;
       border-color: $text-color;
       @include colorchange($text-color, transparent, $contrast, white, $contrast-lighter, white);
-
-      /*& .btn__icon {
-        fill: $text-color;
-      }*/
     }
 
   }
@@ -36,7 +30,7 @@
   &:nth-child(8n+8) {
     background-color: $prime-lighter;
 
-    & .portfolio__technologies-item {
+    & .work__technologies-item {
       color: $prime;
     }
 
@@ -65,7 +59,7 @@
   &:nth-child(8n+6) {
     background-color: $prime;
 
-    & .portfolio__technologies-item {
+    & .work__technologies-item {
       color: $prime;
     }
 
@@ -85,21 +79,43 @@
 
 }
 
-.portfolio__technologies {
-  @include list-reset;
+
+@media #{$tablet-widths} {
+  .portfolio__works-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .portfolio__item {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .work {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+  }
+
+  .work__links {
+    margin-top: auto;
+  }
 }
 
-.portfolio__technologies-item {
-  display: inline-block;
-  margin: 4px 0;
-  background-color: white;
-  padding: 0 8px;
-  color: $contrast;
+@media #{$desktop-widths} {
+  .portfolio__item {
+    width: 33.33%;
+  }
 }
 
-.portfolio__link {
-
-
+@media #{$larger-widths} {
+  .portfolio__item {
+    width: 25%;
+  }
 }
 
 

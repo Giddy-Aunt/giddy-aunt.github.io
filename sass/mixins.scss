@@ -22,13 +22,12 @@
 
 @mixin container {
   min-width: 320px;
-  max-width: 600px;
   width: auto;
   margin: 0 auto;
   padding: 0 20px;
 
   @media #{$desktop-widths} {
-  max-width: $desktop-width;
+  max-width: $larger-width;
   margin: 0 auto;
   }
 }
