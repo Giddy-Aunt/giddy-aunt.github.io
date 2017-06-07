@@ -28,7 +28,7 @@
 
   @media #{$desktop-widths} {
   max-width: $larger-width;
-  margin: 0 auto;
+  padding: 0 20px;
   }
 }
 
@@ -97,8 +97,8 @@
   &:active::before {
     opacity: 0;
     transform: translate3d(0, 0, 0);
+    }
   }
-}
 }
 
 @mixin striped-bg($stripe-color, $bg-color) {
@@ -122,5 +122,32 @@
   }
   @else if ($direction == "left" or $direction == "before") {
     border-right-color: $color;
+  }
+}
+
+@mixin placeholder($color: grey) {
+    &::placeholder {
+    color: $color;
+    text-overflow:ellipsis;
+  }
+
+  &:-moz-placeholder {
+    color: $color;
+    text-overflow:ellipsis;
+  }
+
+  &::-moz-placeholder {
+    color: $color;
+    text-overflow:ellipsis;
+  }
+
+  &::-webkit-input-placeholder {
+    color: $color;
+    text-overflow:ellipsis;
+  }
+
+  &:-ms-input-placeholder  {
+    color: $color;
+    text-overflow: ellipsis;
   }
 }

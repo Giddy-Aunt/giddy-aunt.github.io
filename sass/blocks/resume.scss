@@ -1,3 +1,7 @@
+.resume {
+  margin-bottom: 40px;
+}
+
 .resume__about-me {
   @include container;
   text-align: left;
@@ -22,51 +26,6 @@
   @include striped-bg($light-grey, white);
 }
 
-.contacts__adress {
-    margin-bottom: 10px;
-    font-size: 18px;
-    font-weight: 700;
-}
-
-.contacts__link {
-    text-align: left;
-    display: block;
-    font-size: 18px;
-    font-weight: 700;
-    text-decoration: none;
-    color: inherit;
-    margin-bottom: 10px;
-    position: relative;
-    transition: 0.3s;
-
-  & svg,
-  & span {
-    vertical-align: middle;
-    transition: 0.3s;
-  }
-
-  & span {
-    border-bottom: 1px solid;
-    margin-left: 10px;
-  }
-
-  & svg {
-    fill: $text-color;
-  }
-
-  &:hover {
-    color: $contrast;
-
-    & span {
-      border-bottom: 3px solid;
-      margin-left: 10px;
-    }
-
-    & svg {
-      fill: $contrast;
-    }
-  }
-}
 
 .resume__certificates-list {
   @include list-reset;
@@ -108,6 +67,7 @@
 
 .certificate__img {
   transition: opacity 0.5s;
+  display: block;
   width: 100%;
   height: auto;
 }
@@ -151,6 +111,7 @@
 
   .resume__about-me {
     width: 50%;
+    padding: 0;
   }
 
   .resume__education {
@@ -164,6 +125,6 @@
 
   .resume__skills {
     width: 100%;
+    padding: 0;
   }
-
 }
