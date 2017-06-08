@@ -44,3 +44,6 @@ img {
   height: auto;
 }
 
+::selection {
+  background-color: $contrast-lighter;
+}
