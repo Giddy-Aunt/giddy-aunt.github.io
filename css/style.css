@@ -465,7 +465,7 @@ img {
   z-index: 10;
   display: block;
   vertical-align: top;
-  min-width: 180px;
+  min-width: 240px;
   max-width: 300px;
   margin: 0 auto;
   padding: 15px 20px;
@@ -484,7 +484,8 @@ img {
     pointer-events: none; }
 
 .btn--intro {
-  margin-bottom: 30px;
+  margin-bottom: 15px;
+  min-width: 250px;
   color: white;
   background-color: #fea360;
   border-color: #fea360; }
@@ -492,8 +493,6 @@ img {
     fill: white; }
 
 .btn--resume {
-  max-width: 300px;
-  margin: 0 auto;
   color: white;
   background-color: #0a97b7;
   color: white;
@@ -503,6 +502,7 @@ img {
     fill: white; }
 
 .btn--portfolio {
+  min-width: 120px;
   margin-top: 15px;
   text-align: left;
   color: white; }
@@ -572,30 +572,44 @@ img {
   100% {
     background-position: 0% 0%; } }
 
-.home {
-  display: flex;
-  justify-content: center;
+.page-header {
   min-height: 100vh;
-  padding: 30px 40px;
+  display: flex;
+  flex-direction: row;
   background: linear-gradient(135deg, #0a97b7, #55cfd6);
   background-size: 400% 400%;
   animation: MoveGradient 20s ease infinite; }
+  .page-header__inner {
+    min-width: 320px;
+    width: auto;
+    margin: 0 auto;
+    padding: 0 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column; }
 
 .intro {
   position: relative;
   display: flex;
+  max-width: 800px;
+  margin: auto;
+  flex-grow: 1;
   flex-direction: column;
-  justify-content: space-around;
-  align-items: stretch;
+  justify-content: center;
+  align-items: center;
   color: #fff; }
 
 .intro__photo {
   width: 200px;
   height: 200px;
   margin: 0 auto;
+  margin-bottom: 10px;
   border-radius: 50%;
   overflow: hidden;
   border: 3px solid #0a97b7; }
+
+.intro__text {
+  margin-bottom: 10px; }
 
 .intro__btns {
   text-align: center; }
@@ -608,6 +622,7 @@ img {
   margin: 0;
   padding-bottom: 80px;
   padding-top: 10px;
+  min-height: calc(100vh - 100px);
   color: white;
   background-color: #0a97b7; }
   .contacts__inner {
@@ -966,11 +981,17 @@ img {
   transition: transform 0.3s; }
 
 .scroll-btn {
-  display: block;
-  position: absolute;
-  left: 50%;
-  bottom: 15px;
-  margin-left: -15px; }
+  display: block; }
+  .scroll-btn--down {
+    position: absolute;
+    left: 50%;
+    bottom: 15px;
+    margin-left: -15px; }
+  .scroll-btn--up {
+    position: fixed;
+    right: 30px;
+    bottom: 15px;
+    transform: rotate(180deg); }
 
 .scroll-btn svg {
   position: relative;
@@ -982,11 +1003,53 @@ img {
   animation-iteration-count: infinite;
   animation-play-state: running; }
 
-@media (min-width: 600px) {
+.main-nav__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: right;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: flex-end; }
+
+.main-nav__item {
+  padding: 10px 20px; }
+
+.main-nav__link {
+  display: block;
+  position: relative;
+  color: white;
+  text-decoration: none; }
+  .main-nav__link::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    bottom: auto;
+    right: auto;
+    width: 100%;
+    height: 1px;
+    background-color: white;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: height 0.3s, opacity 0.3s, transform 0.3s; }
+  .main-nav__link--active::after {
+    height: 3px;
+    opacity: 1;
+    transform: translateY(0px); }
+  .main-nav__link:hover::after {
+    height: 3px;
+    opacity: 1;
+    transform: translateY(0px); }
+  @media (min-width: 600px) {
 
   .intro__photo {
     width: 300px;
-    height: 300px; }
+    height: 300px;
+    margin-bottom: 30px; }
+
+  .intro__text {
+    margin-bottom: 45px; }
 
   .intro__btns {
     display: flex;
@@ -1044,8 +1107,7 @@ img {
 
   .certificate:not(:last-child) {
     margin-right: 5px; } }
-
-@media (min-width: 600px) and (hover: hover) {
+  @media (min-width: 600px) and (hover: hover) {
 
   .work__links {
     position: absolute;
@@ -1099,8 +1161,11 @@ img {
   .work:hover .work__caption,
   .work:hover .work__image {
     opacity: 0; } }
+  @media (min-width: 900px) {
 
-@media (min-width: 900px) {
+  .page-header__inner {
+    max-width: 1300px;
+    padding: 0 20px; }
 
   .contacts__inner {
     max-width: 1300px;
@@ -1147,19 +1212,16 @@ img {
   .resume__skills {
     width: 100%;
     padding: 0; } }
-
-@media (min-width: 900px) and (min-width: 900px) {
+  @media (min-width: 900px) and (min-width: 900px) {
 
   .resume__inner {
     max-width: 1300px;
     padding: 0 20px; } }
-
-@media (min-width: 1300px) {
+  @media (min-width: 1300px) {
 
   .portfolio__item {
     width: 25%; } }
-
-@media (hover: hover) {
+  @media (hover: hover) {
 
   .btn--intro {
     color: white;

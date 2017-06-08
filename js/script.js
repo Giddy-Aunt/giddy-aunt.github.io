@@ -13,7 +13,7 @@
 menuItems.click(function(e){
   var href = $(this).attr("href"),
       offsetTop = href === "#" ? 0 : $(href).offset().top+1;
-  $('html, body').stop().animate({ 
+  $('html, body').stop().animate({
       scrollTop: offsetTop
   }, 400);
   e.preventDefault();
@@ -23,7 +23,7 @@ menuItems.click(function(e){
 $(window).scroll(function(){
    // Get container scroll position
    var fromTop = $(this).scrollTop();
-   
+
    // Get id of current scroll item
    var cur = scrollItems.map(function(){
      if ($(this).offset().top < fromTop)
@@ -32,12 +32,12 @@ $(window).scroll(function(){
    // Get the id of the current element
    cur = cur[cur.length-1];
    var id = cur && cur.length ? cur[0].id : "";
-   
+
    if (lastId !== id) {
        lastId = id;
        // Set/remove active class
        menuItems
-         .parent().removeClass("scroll-controls__item--active")
-         .end().filter("[href='#"+id+"']").parent().addClass("scroll-controls__item--active");
-   }                   
+         .parent().removeClass("main-nav__link--active")
+         .end().filter("[href='#"+id+"']").parent().addClass("main-nav__link--active");
+   }
 });

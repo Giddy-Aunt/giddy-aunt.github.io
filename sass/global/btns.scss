@@ -2,7 +2,7 @@
   z-index: 10;
   display: block;
   vertical-align: top;
-  min-width: 180px;
+  min-width: 240px;
   max-width: 300px;
   margin: 0 auto;
   padding: 15px 20px;
@@ -25,14 +25,13 @@
 }
 
 .btn--intro {
-    margin-bottom: 30px;
+    margin-bottom: 15px;
+    min-width: 250px;
 
     @include colorchange;
 }
 
 .btn--resume {
-    max-width: 300px;
-    margin: 0 auto;
     color: white;
     background-color: $prime;
 
@@ -40,6 +39,7 @@
 }
 
 .btn--portfolio {
+  min-width: 120px;
   margin-top: 15px;
   text-align: left;
   color: white;

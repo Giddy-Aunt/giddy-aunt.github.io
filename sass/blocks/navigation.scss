@@ -41,10 +41,21 @@
 
 .scroll-btn {
   display: block;
-  position: absolute;
-  left: 50%;
-  bottom: 15px;
-  margin-left: -15px;
+
+  &--down {
+    position: absolute;
+    left: 50%;
+    bottom: 15px;
+    margin-left: -15px;
+  }
+
+    &--up {
+    position: fixed;
+    right: 30px;
+    bottom: 15px;
+    transform: rotate(180deg);
+  }
+
 }
 
 .scroll-btn svg {
@@ -56,4 +67,46 @@
     animation-delay: 0s;
     animation-iteration-count: infinite;
     animation-play-state: running;
+}
+
+.main-nav__list {
+  @include list-reset;
+  text-align: right;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.main-nav__item {
+  padding: 10px 20px;
+}
+
+.main-nav__link {
+  display: block;
+  position: relative;
+  color: white;
+  text-decoration: none;
+
+  &::after {
+    @include absolute-pseudo-element(100%, 0);
+    width: 100%;
+    height: 1px;
+    background-color: white;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: height 0.3s, opacity 0.3s, transform 0.3s;
+  }
+
+  &--active::after {
+    height: 3px;
+    opacity: 1;
+    transform: translateY(0px);
+    //border-bottom: 2px solid white;
+  }
+
+  &:hover::after {
+    height: 3px;
+    opacity: 1;
+    transform: translateY(0px);
+  }
 }
