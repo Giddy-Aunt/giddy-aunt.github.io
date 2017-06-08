@@ -451,16 +451,6 @@ img {
   max-width: 100%;
   height: auto; }
 
-.section-title {
-  font-size: 32px;
-  text-transform: uppercase;
-  text-align: center;
-  font-weight: bold;
-  margin: 60px 0;
-  color: #076f87; }
-  .section-title--contacts {
-    color: white; }
-
 .btn {
   z-index: 10;
   display: block;
@@ -1041,7 +1031,31 @@ img {
     height: 3px;
     opacity: 1;
     transform: translateY(0px); }
-  @media (min-width: 600px) {
+
+.section-title {
+  position: relative;
+  font-size: 32px;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: bold;
+  margin: 60px 0;
+  color: #076f87; }
+  .section-title::after {
+    content: "";
+    position: absolute;
+    top: auto;
+    left: calc(50% - 40px);
+    bottom: -15px;
+    right: 0;
+    width: 80px;
+    height: 5px;
+    background-color: #f1651d; }
+  .section-title--contacts {
+    color: white;
+    margin-bottom: 100px; }
+    .section-title--contacts::after {
+      background-color: #fea360; }
+    @media (min-width: 600px) {
 
   .intro__photo {
     width: 300px;
@@ -1107,7 +1121,7 @@ img {
 
   .certificate:not(:last-child) {
     margin-right: 5px; } }
-  @media (min-width: 600px) and (hover: hover) {
+    @media (min-width: 600px) and (hover: hover) {
 
   .work__links {
     position: absolute;
@@ -1161,7 +1175,7 @@ img {
   .work:hover .work__caption,
   .work:hover .work__image {
     opacity: 0; } }
-  @media (min-width: 900px) {
+    @media (min-width: 900px) {
 
   .page-header__inner {
     max-width: 1300px;
@@ -1176,7 +1190,7 @@ img {
 
   .contacts__feedback {
     flex-grow: 1;
-    margin-left: 60px; }
+    margin-left: 80px; }
 
   .portfolio__item {
     width: 33.33%; }
@@ -1212,16 +1226,16 @@ img {
   .resume__skills {
     width: 100%;
     padding: 0; } }
-  @media (min-width: 900px) and (min-width: 900px) {
+    @media (min-width: 900px) and (min-width: 900px) {
 
   .resume__inner {
     max-width: 1300px;
     padding: 0 20px; } }
-  @media (min-width: 1300px) {
+    @media (min-width: 1300px) {
 
   .portfolio__item {
     width: 25%; } }
-  @media (hover: hover) {
+    @media (hover: hover) {
 
   .btn--intro {
     color: white;
