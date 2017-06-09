@@ -8,6 +8,7 @@
   min-height: 100vh;
   display: flex;
   flex-direction: row;
+  //padding-top: 80px;
 
   background: linear-gradient(135deg, $prime, $prime-lighter);
   background-size: 400% 400%;
@@ -78,6 +79,10 @@
 }
 
 @media #{$tablet-widths} and (min-height: 800px) {
+  .page-header {
+    padding: 0;
+  }
+
   .intro {
     //margin: 200px auto;
   }
