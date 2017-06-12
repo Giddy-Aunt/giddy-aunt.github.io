@@ -1,7 +1,7 @@
 @keyframes drop {
-  0%   { top:0px;  opacity: 0;}
-  30%  { top:10px; opacity: 1;}
-  100% { top:25px; opacity: 0;}
+  0%   { top:-8px;  opacity: 0;}
+  30%  { top:0px; opacity: 1;}
+  100% { top:12px; opacity: 0;}
 }
 
 .scroll-controls {
@@ -41,6 +41,12 @@
 
 .scroll-btn {
   display: block;
+  @include size(60px);
+  padding: 15px;
+  border-radius: 50%;
+  background-color: transparentize($prime, 0.5);
+  z-index: 100000;
+  font-size: 0;
 
   &--down {
     position: absolute;
@@ -51,7 +57,7 @@
 
     &--up {
     position: fixed;
-    right: 30px;
+    right: 10px;
     bottom: 15px;
     transform: rotate(180deg);
   }
@@ -88,9 +94,6 @@
   width: 33%;
   border-bottom: 1px solid $prime;
   border-left: 1px solid $prime;
-  &:nth-child(2n) {
-    //border-right: 1px solid $text-color;
-  }
 }
 
 .main-nav__link {
@@ -157,4 +160,8 @@
     transform: translateY(0px);
   }
 }
+
+  .scroll-btn--up {
+    display: none;
+  }
 }

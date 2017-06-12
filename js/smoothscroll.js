@@ -6,24 +6,24 @@ function initSmoothScrolling() {
         return;
     }
 
-    var duration = 600;
+    var duration = 400;
 
     var pageUrl = location.hash
         ? stripHash(location.href)
         : location.href
     ;
 
-    delegatedLinkHijacking();
-    //directLinkHijacking();
+    //delegatedLinkHijacking();
+    directLinkHijacking();
 
     function delegatedLinkHijacking() {
         document.body.addEventListener('click', onClick, false);
 
         function onClick(e) {
-            if (!isInPageLink(e.target))
+            if (!isInPageLink(this))
                 return;
 
-            e.stopPropagation();
+            //e.stopPropagation();
             e.preventDefault();
 
             jump(e.target.hash, {
@@ -38,14 +38,14 @@ function initSmoothScrolling() {
     function directLinkHijacking() {
         [].slice.call(document.querySelectorAll('a'))
             .filter(isInPageLink)
-            .forEach(function(a) { a.addEventListener('click', onClick, false); })
+            .forEach(function(a) { a.addEventListener('click', onClick); })
         ;
 
         function onClick(e) {
-            e.stopPropagation();
+            //e.stopPropagation();
             e.preventDefault();
 
-            jump(e.target.hash, {
+            jump(this.hash, {
                 duration: duration
             });
         }

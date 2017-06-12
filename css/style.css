@@ -941,13 +941,13 @@ img {
 
 @keyframes drop {
   0% {
-    top: 0px;
+    top: -8px;
     opacity: 0; }
   30% {
-    top: 10px;
+    top: 0px;
     opacity: 1; }
   100% {
-    top: 25px;
+    top: 12px;
     opacity: 0; } }
 
 .scroll-controls {
@@ -981,7 +981,14 @@ img {
   transition: transform 0.3s; }
 
 .scroll-btn {
-  display: block; }
+  display: block;
+  width: 60px;
+  height: 60px;
+  padding: 15px;
+  border-radius: 50%;
+  background-color: rgba(10, 151, 183, 0.5);
+  z-index: 100000;
+  font-size: 0; }
   .scroll-btn--down {
     position: absolute;
     left: 50%;
@@ -989,7 +996,7 @@ img {
     margin-left: -15px; }
   .scroll-btn--up {
     position: fixed;
-    right: 30px;
+    right: 10px;
     bottom: 15px;
     transform: rotate(180deg); }
 
@@ -1262,7 +1269,10 @@ img {
   .main-nav__link:hover::after {
     height: 3px;
     opacity: 1;
-    transform: translateY(0px); } }
+    transform: translateY(0px); }
+
+  .scroll-btn--up {
+    display: none; } }
     @media (min-width: 900px) and (min-width: 900px) {
 
   .resume__inner {
