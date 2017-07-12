@@ -1,10 +1,23 @@
 .resume {
   margin-bottom: 40px;
+
+  p {
+    text-align: left;
+  a {
+  color: $prime;
+  text-decoration: none;
+  transition: color, border-bottom 0.3s;
+
+  &:hover {
+      color: $contrast;
+      border-bottom: 3px solid;
+    }
+  }
+  }
 }
 
 .resume__about-me {
   @include container;
-  text-align: left;
 }
 
 .resume__skills {
@@ -12,11 +25,31 @@
 }
 
 .resume__skills-list {
-    @include list-reset;
+  @include list-reset;
+  text-align: left;
 }
 
 .resume__skills-item {
-    margin: 25px 0;
+    margin: 16px 0;
+    margin-left: 45px;
+    padding: 5px;
+    position: relative;
+    background-color: #eee;
+
+    &::before {
+      content: "!";
+      position: absolute;
+      top: 0;
+      left: -45px;
+      @include size(41px);
+      background-color: $text-color;
+      color: white;
+      line-height: 41px;
+      text-align: center;
+      display: inline-block;
+      vertical-align: top;
+      margin-right: 10px;
+    }
 }
 
 .resume__links {
@@ -111,20 +144,18 @@
 
   .resume__about-me {
     width: 50%;
-    padding: 0;
+    padding-left: 0;
+    padding-right: 50px;
   }
 
-  .resume__education {
+  .resume__skills {
     width: 50%;
+    padding: 0;
   }
 
   .resume__certificates-list {
     background: none;
     border: none;
-  }
-
-  .resume__skills {
-    width: 100%;
     padding: 0;
   }
 }

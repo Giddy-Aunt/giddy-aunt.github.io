@@ -570,21 +570,50 @@ img {
   100% {
     background-position: 0% 0%; } }
 
-.page-header {
+.first-screen {
   min-height: 100vh;
   display: flex;
   flex-direction: row;
+  color: white;
   background: linear-gradient(135deg, #0a97b7, #55cfd6);
   background-size: 400% 400%;
   animation: MoveGradient 20s ease infinite; }
-  .page-header__inner {
-    min-width: 320px;
-    width: auto;
-    margin: 0 auto;
-    padding: 0 20px;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column; }
+
+.page-header__inner {
+  min-width: 320px;
+  width: auto;
+  margin: 0 auto;
+  padding: 0 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column; }
+  .page-header__inner .langs__link {
+    display: block;
+    width: 3rem;
+    height: 3rem;
+    line-height: 3rem;
+    font-size: 0.75rem;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-style: bold;
+    border: 2px solid;
+    border-radius: 50%;
+    opacity: 0.4; }
+    .page-header__inner .langs__link:hover, .page-header__inner .langs__link--active {
+      opacity: 0.7; }
+
+.langs {
+  margin: auto; }
+  .langs .langs__list {
+    margin: 0;
+    padding: 0;
+    list-style: none; }
+  .langs .langs__item {
+    display: inline-block;
+    vertical-align: top; }
+    .langs .langs__item:first-child {
+      margin-right: 10px; }
 
 .intro {
   position: relative;
@@ -732,54 +761,6 @@ img {
   line-height: 18px;
   text-align: left; }
 
-.progress-bar {
-  text-align: left;
-  background: #eeeeee;
-  border-radius: 2px; }
-  .progress-bar--85 .progress-bar__fill {
-    margin-right: 15%; }
-  .progress-bar--50 .progress-bar__fill {
-    margin-right: 50%; }
-  .progress-bar--80 .progress-bar__fill {
-    margin-right: 20%; }
-  .progress-bar--90 .progress-bar__fill {
-    margin-right: 10%; }
-
-.progress-bar__fill {
-  background: linear-gradient(-45deg, transparent 50%, #f1651d 50%, #f1651d 60%, transparent 60%), linear-gradient(-45deg, #f1651d 10%, transparent 10%);
-  background-color: #fea360;
-  background-size: 1em 1em;
-  border: 1px solid #eeeeee;
-  height: 100%;
-  position: relative; }
-
-.progress-bar__name {
-  padding: 5px 5px;
-  display: inline-block;
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 30px;
-  color: white;
-  background-color: #f1651d; }
-
-.progress-bar__perc {
-  position: absolute;
-  display: block;
-  right: 0;
-  top: -40px;
-  padding: 0 4px;
-  min-width: 44px;
-  color: white;
-  background-color: #076f87;
-  border-radius: 3px; }
-  .progress-bar__perc::after {
-    content: "";
-    position: absolute;
-    bottom: -18px;
-    left: 12px;
-    border: 10px transparent solid;
-    border-top-color: #076f87; }
-
 .portfolio {
   padding-top: 1px; }
 
@@ -863,13 +844,21 @@ img {
 
 .resume {
   margin-bottom: 40px; }
+  .resume p {
+    text-align: left; }
+    .resume p a {
+      color: #0a97b7;
+      text-decoration: none;
+      transition: color, border-bottom 0.3s; }
+      .resume p a:hover {
+        color: #f1651d;
+        border-bottom: 3px solid; }
 
 .resume__about-me {
   min-width: 320px;
   width: auto;
   margin: 0 auto;
-  padding: 0 20px;
-  text-align: left; }
+  padding: 0 20px; }
 
 .resume__skills {
   min-width: 320px;
@@ -880,10 +869,29 @@ img {
 .resume__skills-list {
   margin: 0;
   padding: 0;
-  list-style: none; }
+  list-style: none;
+  text-align: left; }
 
 .resume__skills-item {
-  margin: 25px 0; }
+  margin: 16px 0;
+  margin-left: 45px;
+  padding: 5px;
+  position: relative;
+  background-color: #eee; }
+  .resume__skills-item::before {
+    content: "!";
+    position: absolute;
+    top: 0;
+    left: -45px;
+    width: 41px;
+    height: 41px;
+    background-color: #076f87;
+    color: white;
+    line-height: 41px;
+    text-align: center;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 10px; }
 
 .resume__links {
   padding: 60px 20px;
@@ -1011,7 +1019,6 @@ img {
   animation-play-state: running; }
 
 .main-nav {
-  width: calc(100% + 40px);
   margin-left: -20px;
   margin-right: -20px;
   margin-bottom: 10px; }
@@ -1130,7 +1137,7 @@ img {
     margin-right: 5px; } }
     @media (min-width: 600px) and (min-height: 800px) {
 
-  .page-header {
+  .first-screen {
     padding: 0; } }
     @media (min-width: 600px) and (hover: hover) {
 
@@ -1176,6 +1183,16 @@ img {
     max-width: 1300px;
     padding: 0 20px; }
 
+  .page-header__nav-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between; }
+
+  .page-header__nav-container .langs {
+    margin: 0;
+    margin-top: 10px;
+    order: -1; }
+
   .contacts__inner {
     max-width: 1300px;
     padding: 0 20px; }
@@ -1209,21 +1226,29 @@ img {
 
   .resume__about-me {
     width: 50%;
-    padding: 0; }
+    padding-left: 0;
+    padding-right: 50px; }
 
-  .resume__education {
-    width: 50%; }
+  .resume__skills {
+    width: 50%;
+    padding: 0; }
 
   .resume__certificates-list {
     background: none;
-    border: none; }
-
-  .resume__skills {
-    width: 100%;
+    border: none;
     padding: 0; }
 
+  .page-header__nav-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between; }
+
+  .page-header__nav-container .langs {
+    margin: 0;
+    margin-top: 10px;
+    order: -1; }
+
   .main-nav {
-    width: auto;
     margin: 0; }
 
   .main-nav__list {
@@ -1431,12 +1456,6 @@ img {
   .btn--feedback:active::before {
     opacity: 0;
     transform: translate3d(0, 0, 0); }
-
-  .progress-bar:hover .progress-bar__perc {
-    opacity: 1; }
-
-  .progress-bar__perc {
-    opacity: 0; }
 
   .portfolio__item:nth-child(8n+1) .btn--portfolio, .portfolio__item:nth-child(8n+7) .btn--portfolio {
     color: #076f87;
