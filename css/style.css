@@ -594,6 +594,7 @@ img {
     line-height: 3rem;
     font-size: 0.75rem;
     color: white;
+    text-align: center;
     text-decoration: none;
     text-transform: uppercase;
     font-style: bold;
@@ -609,7 +610,9 @@ img {
   .langs .langs__list {
     margin: 0;
     padding: 0;
-    list-style: none; }
+    list-style: none;
+    display: flex;
+    justify-content: space-between; }
   .langs .langs__item {
     display: inline-block;
     vertical-align: top; }
@@ -1066,6 +1069,13 @@ img {
     .section-title--contacts::after {
       background-color: #fea360; }
     @media (min-width: 600px) {
+
+  .langs {
+    margin: auto; }
+
+  .langs .langs__list {
+    display: block;
+    text-align: left; }
 
   .intro__photo {
     width: 300px;

@@ -30,6 +30,7 @@
       line-height: 3rem;
       font-size: 0.75rem;
       color: white;
+      text-align: center;
       text-decoration: none;
       text-transform: uppercase;
       font-style: bold;
@@ -50,6 +51,8 @@
 
     .langs__list {
       @include list-reset;
+      display: flex;
+      justify-content: space-between;
     }
 
     .langs__item {
@@ -95,6 +98,15 @@
 }
 
 @media #{$tablet-widths} {
+    .langs {
+    margin: auto;
+
+    .langs__list {
+    display: block;
+    text-align: left;
+    }
+  }
+
   .intro__photo {
     @include size(300px);
     margin-bottom: 30px;
