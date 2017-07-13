@@ -83,13 +83,14 @@
 
 .main-nav__list {
   @include list-reset;
-  font-size: 14px;
-  display: flex;
-  flex-wrap: wrap;
+  font-size: 0;
   background-color: $text-color;
 }
 
 .main-nav__item {
+  display: inline-block;
+  vertical-align: center;
+  font-size: 14px;
   width: 33%;
   border-bottom: 1px solid $prime;
   border-left: 1px solid $prime;

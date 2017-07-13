@@ -574,10 +574,14 @@ img {
   min-height: 100vh;
   display: flex;
   flex-direction: row;
+  padding: 40px 0;
   color: white;
   background: linear-gradient(135deg, #0a97b7, #55cfd6);
   background-size: 400% 400%;
   animation: MoveGradient 20s ease infinite; }
+
+.page-header {
+  padding-top: 0; }
 
 .page-header__inner {
   min-width: 320px;
@@ -1028,12 +1032,13 @@ img {
   margin: 0;
   padding: 0;
   list-style: none;
-  font-size: 14px;
-  display: flex;
-  flex-wrap: wrap;
+  font-size: 0;
   background-color: #076f87; }
 
 .main-nav__item {
+  display: inline-block;
+  vertical-align: center;
+  font-size: 14px;
   width: 33%;
   border-bottom: 1px solid #0a97b7;
   border-left: 1px solid #0a97b7; }
@@ -1146,7 +1151,7 @@ img {
     margin-right: 5px; } }
     @media (min-width: 600px) and (min-height: 800px) {
 
-  .first-screen {
+  .page-header {
     padding: 0; } }
     @media (min-width: 600px) and (hover: hover) {
 
