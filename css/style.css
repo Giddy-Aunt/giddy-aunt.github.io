@@ -599,7 +599,8 @@ img {
     font-style: bold;
     border: 2px solid;
     border-radius: 50%;
-    opacity: 0.4; }
+    opacity: 0.4;
+    transition: opacity 0.3s; }
     .page-header__inner .langs__link:hover, .page-header__inner .langs__link--active {
       opacity: 0.7; }
 
@@ -875,22 +876,18 @@ img {
 .resume__skills-item {
   margin: 16px 0;
   margin-left: 45px;
-  padding: 5px;
+  padding: 5px 10px;
   position: relative;
   background-color: #eee; }
   .resume__skills-item::before {
-    content: "!";
+    content: "";
     position: absolute;
     top: 0;
     left: -45px;
     width: 41px;
     height: 41px;
-    background-color: #076f87;
-    color: white;
-    line-height: 41px;
-    text-align: center;
-    display: inline-block;
-    vertical-align: top;
+    background: #076f87 url("../img/icon-mark.svg") no-repeat center;
+    background-size: 26px;
     margin-right: 10px; }
 
 .resume__links {

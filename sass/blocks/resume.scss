@@ -32,22 +32,18 @@
 .resume__skills-item {
     margin: 16px 0;
     margin-left: 45px;
-    padding: 5px;
+    padding: 5px 10px;
     position: relative;
     background-color: #eee;
 
     &::before {
-      content: "!";
+      content: "";
       position: absolute;
       top: 0;
       left: -45px;
       @include size(41px);
-      background-color: $text-color;
-      color: white;
-      line-height: 41px;
-      text-align: center;
-      display: inline-block;
-      vertical-align: top;
+      background: $text-color url("../img/icon-mark.svg") no-repeat center;
+      background-size: 26px;
       margin-right: 10px;
     }
 }
@@ -151,6 +147,9 @@
   .resume__skills {
     width: 50%;
     padding: 0;
+  }
+
+  .resume__education {
   }
 
   .resume__certificates-list {
