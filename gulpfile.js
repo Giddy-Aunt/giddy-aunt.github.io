@@ -14,18 +14,7 @@ var svgmin = require("gulp-svgmin");
 var server = require("browser-sync").create();
 var run = require("run-sequence");
 var del = require("del");
-
-
-// gulp.task('css', gulp.series('images', () =>
-
-//   gulp.src(cssConfig.src)
-//     // .other plugins
-//     .pipe(gulp.dest(cssConfig.build));
-
-// )); // remember the extra closing bracket!
-
-///////
-
+var ghPages = require('gulp-gh-pages');
 
 gulp.task("style", function (done) {
   gulp.src("sass/style.scss")
@@ -85,6 +74,8 @@ gulp.task("copy", function () {
     "fonts/**/*.{woff,woff2}",
     "img/**",
     "js/**",
+    "./eng/*.html",
+    "./rus/*.html",
     "*.html"
   ], {
     base: "."
@@ -96,10 +87,12 @@ gulp.task("clean", function () {
   return del("build");
 });
 
-// gulp.task("build", function (fn) {
-//   run("clean", "copy", "style", "images", "symbols", fn);
-// });
-
 gulp.task("build", gulp.series("clean", "copy", "style", "images", "symbols", function (done) {
   done();
 }));
+
+
+gulp.task('deploy', function() {
+  return gulp.src('./build/**/*')
+    .pipe(ghPages({remoteUrl: "git@github.com:cousinzodin/cousinzodin.github.io.git", branch: "master"}));
+});
