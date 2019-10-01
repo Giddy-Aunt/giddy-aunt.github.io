@@ -777,14 +777,14 @@ img {
   font-size: 14px;
   line-height: 18px;
   color: white;
-  background-color: #054756;
+  background-color: #087f9a;
   border: none;
   outline: none;
   -webkit-transition: background-color 0.5s;
   transition: background-color 0.5s; }
   .text-field__input:hover,
   .text-field__textarea:hover {
-    background-color: #087f9a; }
+    background-color: #054756; }
   .text-field__input:focus,
   .text-field__textarea:focus {
     color: white;
@@ -972,16 +972,17 @@ img {
 
 .resume {
   margin-bottom: 40px; }
-  .resume p, .resume ul {
-    text-align: left; }
-    .resume p a, .resume ul a {
-      color: #0a97b7;
-      text-decoration: none;
-      -webkit-transition: color, border-bottom 0.3s;
-      transition: color, border-bottom 0.3s; }
-      .resume p a:hover, .resume ul a:hover {
-        color: #f1651d;
-        border-bottom: 3px solid; }
+
+.resume__p {
+  text-align: left; }
+  .resume__p a {
+    color: #0a97b7;
+    text-decoration: none;
+    -webkit-transition: color, border-bottom 0.3s;
+    transition: color, border-bottom 0.3s; }
+    .resume__p a:hover {
+      color: #f1651d;
+      border-bottom: 3px solid; }
 
 .resume__about-me {
   min-width: 320px;
@@ -1076,7 +1077,11 @@ img {
   -webkit-box-direction: normal;
   -webkit-flex-direction: row;
       -ms-flex-direction: row;
-          flex-direction: row; }
+          flex-direction: row;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start; }
 
 .certificate {
   width: calc(33.3% - 10px);
